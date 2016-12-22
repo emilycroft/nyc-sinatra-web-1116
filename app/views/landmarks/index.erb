@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <p><% @landmarks.each do |landmark| %>
+      <a href="/landmarks/<%=landmark.id%>"><%= landmark.name%> </a>
+      <%= landmark.year_completed%>
+    <% end %></p>
+  </body>
+</html>

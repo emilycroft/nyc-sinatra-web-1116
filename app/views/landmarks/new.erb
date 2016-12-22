@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form action="/landmarks" method="POST">
+      <p>  Name: <input id="landmark_name" type="text" name="landmark[name]" value=""></p>
+      <% Landmark.all.each do |landmark|%>
+        <p><%=landmark.name%><input type="checkbox" name="landmark[landmark_id][]" value="<%=landmark.id%>"></p>
+      <% end %>
+
+      <% Title.all.each do |title|%>
+        <%=title.name%><input type="checkbox" name="landmark[title_id][]" value="<%=title.id%>">
+      <% end %>
+
+      <p>  Year Completed: <input id="landmark_year_completed" type="text" name="landmark[year_completed]" value=""></p>
+
+      <input type="submit" name="submit" value="Create New Landmark">
+    </form>
+
+  </body>
+</html>
